@@ -1,0 +1,52 @@
+# GNU Autotools
+/autom4te.cache
+/configure
+/config.guess
+/config.sub
+/install-sh
+/missing
+/mkinstalldirs
+/depcomp
+/compile
+/COPYING
+/INSTALL
+/NEWS
+/README
+/AUTHORS
+/ChangeLog
+/m4/
+/stamp-h1
+/Makefile.in
+/aclocal.m4
+
+# Build artifacts
+/*.o
+/*.lo
+/*.la
+/.libs/
+/_libs/
+
+# Guile
+/*.go
+/*~
+# Bytecode
+/*.go
+# Backups
+/*~
+# Object files
+/*.o
+/*.lo
+# Libraries
+/*.la
+# Autotools
+/autom4te.cache
+/configure
+# Miscellaneous
+*.orig
+*.rej
+*.swp
+*.core
+*.stackdump
+*.d
+*~
+.#*
