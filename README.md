@@ -8,12 +8,21 @@ Cobweb is a multi-threaded, declarative functional web development framework and
 * **Declarative:** Cobweb's declarative nature allows developers to define web applications in a clear and concise way, without having to worry about the underlying implementation details.
 * **Functional:** Cobweb is written in GNU Guile, a functional programming language. This allows developers to write web applications in a purely functional style, which can lead to more robust and maintainable code.
 
-## Getting Started
+## Usage
 
-To get started with Cobweb, you will need to have GNU Guile installed on your system. You can then install Cobweb using the Guile package manager:
+To use Cobweb, you will need to have GNU Guile installed on your system. You can then load the server and run it from a Guile REPL.
 
+First, start a Guile REPL in the project's root directory. Then, add the `cobweb` directory to the Guile load path:
+
+```scheme
+scheme@(guile-user)> (add-to-load-path "cobweb")
 ```
-guile -c '(use-modules (ice-9 install)) (install-from-file "cobweb.scm")'
+
+Now, you can load the server module and run it:
+
+```scheme
+scheme@(guile-user)> (use-modules (server))
+scheme@(guile-user)> (run-server #:handler (lambda (req) '(200 () "Hello, World!")))
 ```
 
 ## Documentation

@@ -4,6 +4,7 @@
   #:use-module (cobweb http)
   #:use-module (ice-9 posix)
   #:use-module (ice-9 threads)
+  #:use-module (ice-9 optargs)
   #:export (run-server))
 
 (define (handle-connection client-fd handler)
@@ -14,7 +15,7 @@
     (serialize-response client-port response)
     (close-port client-port)))
 
-(define (run-server #:key (port 8080) handler)
+(define* (run-server #:key (port 8080) handler)
   "Run a multi-threaded web server on PORT, using HANDLER for requests."
   (let ((sock (socket AF_INET SOCK_STREAM 0)))
     (setsockopt sock SOL_SOCKET SO_REUSEADDR 1)
