@@ -1,30 +1,25 @@
-# Cobweb
+# Cobweb-Wasm
 
-Cobweb is a multi-threaded, declarative functional web development framework and a collection of utilities written in GNU Guile.
+Cobweb-Wasm is a declarative functional web development framework for WebAssembly, written in GNU Guile. This version of Cobweb is compiled to WebAssembly using the Spritely Institute's Hoot toolchain.
 
 ## Features
 
-* **Multi-threaded:** Cobweb is designed to handle multiple requests concurrently, making it suitable for high-performance web applications.
-* **Declarative:** Cobweb's declarative nature allows developers to define web applications in a clear and concise way, without having to worry about the underlying implementation details.
-* **Functional:** Cobweb is written in GNU Guile, a functional programming language. This allows developers to write web applications in a purely functional style, which can lead to more robust and maintainable code.
+* **Declarative:** Cobweb's declarative nature allows developers to define web applications in a clear and concise way.
+* **Functional:** Cobweb is written in GNU Guile, a functional programming language.
+* **WebAssembly:** Cobweb-Wasm is compiled to WebAssembly, allowing it to run in any modern web browser.
 
-## Usage
+## Getting Started
 
-To use Cobweb, you will need to have GNU Guile installed on your system. You can then load the server and run it from a Guile REPL.
+To get started with Cobweb-Wasm, you will need to have the Hoot toolchain installed on your system. You can find installation instructions on the Spritely Institute's website.
 
-First, start a Guile REPL in the project's root directory. Then, add the `cobweb` directory to the Guile load path:
+Once you have Hoot installed, you can compile the "Hello, World" example to WebAssembly using the following command:
 
-```scheme
-scheme@(guile-user)> (add-to-load-path "cobweb")
+```
+hoot compile -o hello.wasm examples/hello-wasm.scm
 ```
 
-Now, you can load the server module and run it:
-
-```scheme
-scheme@(guile-user)> (use-modules (server))
-scheme@(guile-user)> (run-server #:handler (lambda (req) '(200 () "Hello, World!")))
-```
+This will create a `hello.wasm` file in the project's root directory. You can then load and run this file in a web browser.
 
 ## Documentation
 
-The Cobweb documentation is available online at [https://www.gnu.org/software/guile-cobweb/manual/](https://www.gnu.org/software/guile-cobweb/manual/).
+The Cobweb-Wasm documentation is a work in progress.
